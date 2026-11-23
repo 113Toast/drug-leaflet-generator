@@ -1,12 +1,42 @@
 {
-  "parts": [
-    "tfda_drugs_full_part1.json",
-    "tfda_drugs_full_part2.json",
-    "tfda_drugs_full_part3.json",
-    "tfda_drugs_full_part4.json",
-    "tfda_drugs_full_part5.json",
-    "tfda_drugs_full_part6.json",
-    "tfda_drugs_full_part7.json",
-    "tfda_drugs_full_part8.json"
+  "schema_version": 2,
+  "generated_at": "2026-11-23T07:26:40.694988+00:00",
+  "counts": {
+    "total_drugs": 24049,
+    "structured_leaflets": 1595,
+    "pdf_only_drugs": 14977,
+    "meta_parts_count": 13,
+    "leaflet_parts_count": 13
+  },
+  "index": "tfda_drugs_index.json",
+  "meta_parts": [
+    "drugs_meta_part1.json",
+    "drugs_meta_part2.json",
+    "drugs_meta_part3.json",
+    "drugs_meta_part4.json",
+    "drugs_meta_part5.json",
+    "drugs_meta_part6.json",
+    "drugs_meta_part7.json",
+    "drugs_meta_part8.json",
+    "drugs_meta_part9.json",
+    "drugs_meta_part10.json",
+    "drugs_meta_part11.json",
+    "drugs_meta_part12.json",
+    "drugs_meta_part13.json"
+  ],
+  "leaflet_parts": [
+    "leaflets_part1.json",
+    "leaflets_part2.json",
+    "leaflets_part3.json",
+    "leaflets_part4.json",
+    "leaflets_part5.json",
+    "leaflets_part6.json",
+    "leaflets_part7.json",
+    "leaflets_part8.json",
+    "leaflets_part9.json",
+    "leaflets_part10.json",
+    "leaflets_part11.json",
+    "leaflets_part12.json",
+    "leaflets_part13.json"
   ]
 }
