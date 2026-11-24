@@ -1,0 +1,30 @@
+{
+  "name": "高齡多重用藥檢核與衛教系統",
+  "short_name": "安心用藥",
+  "description": "2023 AGS Beers Criteria 高齡多重用藥檢核與衛教單張產生器",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F0F7F8",
+  "theme_color": "#0F5C6E",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

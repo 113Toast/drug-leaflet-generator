@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#177B90"/>
+      <stop offset="50%" stop-color="#0F5C6E"/>
+      <stop offset="100%" stop-color="#083945"/>
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#EEF7F9"/>
+    </linearGradient>
+    <clipPath id="capClip">
+      <rect x="-38" y="-81" width="76" height="162" rx="38" ry="38"/>
+    </clipPath>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <path d="M248 96 C290 96 336 114 362 126 C376 132 380 144 380 160 C380 268 338 352 262 398 C253 403 243 403 234 398 C158 352 116 268 116 160 C116 144 120 132 134 126 C160 114 206 96 248 96 Z" fill="url(#shieldGrad)"/>
+  <g transform="translate(248 244) rotate(42)">
+    <g clip-path="url(#capClip)">
+      <rect x="-42" y="-85" width="84" height="85" fill="#0F5C6E"/>
+      <rect x="-42" y="0" width="84" height="85" fill="#4BB4C5"/>
+      <rect x="-42" y="-1.6" width="84" height="3.2" fill="#FFFFFF" fill-opacity="0.94"/>
+      <rect x="-27" y="-61" width="10" height="122" rx="5" fill="#FFFFFF" fill-opacity="0.33"/>
+    </g>
+  </g>
+  <circle cx="342" cy="334" r="62" fill="#FFFFFF"/>
+  <circle cx="342" cy="334" r="49" fill="#10B981"/>
+  <path d="M321 336 L337 352 L366 320" fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
