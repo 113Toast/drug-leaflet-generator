@@ -5,13 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>高齡多重用藥檢核與衛教單張系統（2023 Beers Criteria）</title>
   <meta name="theme-color" content="#0F5C6E" />
+  <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="安心用藥" />
-  <link rel="icon" type="image/svg+xml" href="./icon.svg" />
-  <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
-  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./pwa-192.png" />
+  <link rel="apple-touch-icon" sizes="192x192" href="./pwa-192.png" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js', { scope: './' }).catch(() => {});
+      });
+    }
+  </script>
   <style>
     :root {
       --primary: #0F5C6E;
@@ -4480,7 +4487,7 @@ ${JSON.stringify(items)}
       const drug = document.getElementById('rep_drug').value.trim() || '（未指定）';
       const desc = document.getElementById('rep_desc').value.trim();
       const contact = document.getElementById('rep_contact').value.trim() || '（未填寫）';
-      const env = `Polypharmacy-v36 | ${window.innerWidth}x${window.innerHeight} | ${new Date().toLocaleString('zh-TW')}`;
+      const env = `Polypharmacy-v37 | ${window.innerWidth}x${window.innerHeight} | ${new Date().toLocaleString('zh-TW')}`;
       return { type, drug, desc, contact, env, plainText: `【類型】${type}\n【藥品】${drug}\n【描述】${desc}\n【聯絡】${contact}\n【環境】${env}` };
     }
 
