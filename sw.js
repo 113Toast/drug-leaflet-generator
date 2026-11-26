@@ -1,10 +1,10 @@
-const CACHE_NAME = 'elder-med-pwa-v39';
+const CACHE_NAME = 'elder-med-pwa-v40';
 const APP_SHELL = [
   './',
   './index.html',
   './manifest.webmanifest',
-  './pwa-192.png',
-  './pwa-512.png'
+  './icon-192.png',
+  './icon-512.png'
 ];
 
 self.addEventListener('install', (event) => {
