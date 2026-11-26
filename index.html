@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>高齡多重用藥檢核與衛教單張系統（2023 Beers Criteria）</title>
-  <meta name="theme-color" content="#0F5C6E" />
+  <meta name="theme-color" content="#15304D" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -1240,6 +1240,142 @@
       background: #F9FAFB;
     }
 
+
+    /* ===== v38 Design Layer：視覺精修（僅改色彩/邊框/陰影/圓角，不動 A4 尺寸） ===== */
+    :root {
+      --primary: #24476B;
+      --primary-dark: #15304D;
+      --primary-light: #EFF4F9;
+      --primary-border: #C8D7E8;
+      --primary-soft: #E2ECF6;
+      --text-main: #1B2733;
+      --text-muted: #51606F;
+      --serif: "Noto Serif TC", "Source Han Serif TC", "Songti TC", "PMingLiU", serif;
+      --line: #E3E9EE;
+      --line-strong: #CBD5DD;
+      --surface: #FFFFFF;
+      --surface-2: #F5F7FA;
+      --purple: #6D28D9;
+      --purple-bg: #F5F3FF;
+      --purple-border: #DDD6FE;
+      --shadow-sm: 0 1px 2px rgba(15,35,50,.05);
+      --shadow-md: 0 2px 10px rgba(15,35,50,.07);
+      --ring: 0 0 0 3px rgba(36,71,107,.18);
+      --bg-app: #E8ECF1;
+    }
+    body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+    /* 工作區 */
+    .editor-panel { background: var(--surface-2); }
+    .editor-header {
+      background: var(--primary-dark);
+      padding: 12px 18px;
+      box-shadow: 0 1px 0 rgba(0,0,0,.12);
+    }
+    .editor-header h1 { font-size: 16px; letter-spacing: .02em; }
+    .db-status { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.18); }
+    .split-resizer { background: var(--line); border-color: var(--line-strong); }
+
+    /* 三步驟導覽 */
+    .tabs { border-bottom: 1px solid var(--line); padding: 0 14px; gap: 2px; box-shadow: var(--shadow-sm); }
+    .tab-btn { color: #64748B; font-weight: 600; border-bottom: 3px solid transparent; transition: color .15s, border-color .15s, background .15s; }
+    .tab-btn:hover { color: var(--primary); background: var(--primary-light); }
+    .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); background: transparent; font-weight: 700; }
+    .tab-pill { border-radius: 999px; font-weight: 700; }
+
+    /* 區塊與表單 */
+    .editor-body { padding-top: 14px; }
+    .section-box { border: 1px solid var(--line); border-radius: 12px; padding: 15px 17px; margin-bottom: 14px; box-shadow: var(--shadow-sm); }
+    .section-box h3 { color: var(--primary-dark); font-weight: 700; letter-spacing: .01em; }
+    .section-sub-label { color: #64748B; font-weight: 600; }
+    label { color: #475569; font-weight: 600; }
+    input[type="text"], input[type="number"], input[type="password"], textarea, select {
+      border: 1px solid var(--line-strong); border-radius: 8px; padding: 8px 10px; background: #FBFCFD;
+      transition: border-color .15s, box-shadow .15s, background .15s;
+    }
+    input:hover, textarea:hover, select:hover { border-color: #94A3B8; }
+    input:focus, textarea:focus, select:focus { border-color: var(--primary); background: var(--white); box-shadow: var(--ring); outline: none; }
+
+    /* 按鈕 */
+    .btn { border-radius: 8px; padding: 7px 12px; }
+    .btn-sm { padding: 4px 9px; font-size: 11.5px; }
+    .btn-primary { background: var(--primary); box-shadow: 0 1px 2px rgba(21,48,77,.28); }
+    .btn-primary:hover { background: var(--primary-dark); }
+    .btn-outline { background: var(--white); border-color: var(--line-strong); color: var(--primary-dark); }
+    .btn-outline:hover { background: var(--primary-light); border-color: var(--primary); }
+
+    /* 膠囊切換 */
+    .lang-btn, .filter-chip, .check-pill, .font-size-btn { border-radius: 999px; transition: background .15s, border-color .15s, color .15s; }
+    .check-pill { border-color: var(--line-strong); background: var(--white); }
+    .check-pill:has(input:checked) { background: var(--primary-soft); border-color: var(--primary); color: var(--primary-dark); }
+    .lang-btn.active, .filter-chip.active, .font-size-btn.active { background: var(--primary); border-color: var(--primary); color: var(--white); }
+    .comorb-details { border-radius: 10px; border-color: var(--line); }
+    .comorb-summary-tag.has-items { background: var(--primary-soft); color: var(--primary-dark); }
+
+    /* 搜尋下拉 */
+    .search-results { border: 1px solid var(--line-strong); border-radius: 10px; box-shadow: var(--shadow-md); }
+    .search-item { border-bottom: 1px solid var(--line); }
+    .search-item:hover { background: var(--primary-light); }
+    .search-item .sub { color: #64748B; }
+    .nhi-tag, .combo-badge { border-radius: 999px; }
+    .src-badge { border-radius: 999px; font-weight: 700; }
+    .rx-inline-panel { border-radius: 10px; border-color: var(--primary-border); background: var(--primary-light); }
+
+    /* 藥品編輯卡 */
+    .med-editor-card { border: 1px solid var(--line); border-left: 4px solid var(--line-strong); border-radius: 10px; box-shadow: var(--shadow-sm); transition: box-shadow .15s, border-color .15s; }
+    .med-editor-card:hover { box-shadow: var(--shadow-md); }
+    .med-editor-card.expanded { border-color: var(--primary-border); border-left-color: var(--primary); }
+    .med-editor-card.has-dup { border-left-color: var(--purple); }
+    .med-editor-card.has-caution { border-left-color: #D97706; }
+    .med-editor-card.has-avoid { border-left-color: var(--danger); }
+    .med-editor-head:hover { background: var(--surface-2); }
+    .med-editor-title { color: var(--text-main); font-weight: 700; }
+    .grounding-box { border-radius: 8px; background: var(--ok-bg); border-color: var(--ok-border); color: var(--ok-text); }
+    .grounding-box.unverified { background: var(--warn-bg); border-color: var(--warn-border); color: var(--warn-text); }
+    .leaflet-sections-box { border-radius: 8px; border-color: var(--line); }
+    .editor-img-item { border-radius: 8px; border-color: var(--line); }
+    .editor-img-item.active { border-color: var(--primary); box-shadow: var(--ring); }
+
+    /* 安全檢核 */
+    .safety-quick-banner { border-radius: 10px; box-shadow: var(--shadow-sm); }
+    .beers-alert { border-radius: 10px; padding: 10px 12px; border-left-width: 4px; box-shadow: var(--shadow-sm); }
+    .beers-alert.dup { background: var(--purple-bg); border-color: var(--purple-border); border-left-color: var(--purple); }
+    .beers-alert.dup .beers-tag.dup, .beers-tag.dup { background: var(--purple); color: #fff; }
+    .beers-tag { border-radius: 999px; font-weight: 700; }
+    .beers-summary-ok { border-radius: 10px; background: var(--ok-bg); border: 1px solid var(--ok-border); color: var(--ok-text); }
+
+    /* 預覽區 */
+    .preview-panel { background: var(--bg-app); }
+    .preview-toolbar { padding: 8px 14px; border-bottom: 1px solid var(--line); box-shadow: var(--shadow-sm); }
+    .page-badge { border-radius: 999px; font-weight: 700; }
+    .a4-page { box-shadow: 0 1px 3px rgba(15,35,50,.10), 0 10px 30px rgba(15,35,50,.14); }
+
+    /* A4 衛教單（只動色彩/邊框/圓角，維持尺寸） */
+    .sheet-header { border-bottom-color: var(--primary); }
+    .schedule-card { border-color: var(--primary); border-radius: 10px; background: linear-gradient(180deg, #F5F8FC 0%, #FFFFFF 60%); }
+    .time-pill { border-radius: 999px; }
+    .elder-card { border: 1.5px solid var(--primary-border); border-top: 4px solid var(--primary); border-radius: 8px; }
+    .elder-lbl { border-radius: 4px; }
+    .patient-reminder-box { background: #FFFBEB; border-color: #F2B84B; border-left-width: 6px; }
+    .sheet-footer { color: #64748B; }
+
+    /* 對話框 */
+    .modal-dialog { border-radius: 14px; box-shadow: 0 20px 50px rgba(15,35,50,.28); }
+    .modal-header { background: var(--primary-light); color: var(--primary-dark); border-bottom: 1px solid var(--primary-border); }
+    .modal-close-btn { color: var(--primary-dark); }
+
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+
+    /* 字體：內文黑體、工作區標題用宋體襯線，帶出紙本藥袋/處方箋的專業感 */
+    .editor-header h1, .section-box h3, .modal-header h2, .med-editor-title {
+      font-family: var(--serif); letter-spacing: .02em;
+    }
+    .editor-header h1 { font-size: 17px; font-weight: 800; }
+    .section-box h3 { font-size: 14.5px; }
+    .tab-btn.active { box-shadow: inset 0 -1px 0 var(--primary); }
+    .split-resizer:hover, .split-resizer.dragging { background: var(--primary-border); }
     @media (max-width: 960px) {
       body { display: block; height: auto; min-height: 100vh; overflow: visible; }
       .split-resizer { display: none !important; }
@@ -4487,7 +4623,7 @@ ${JSON.stringify(items)}
       const drug = document.getElementById('rep_drug').value.trim() || '（未指定）';
       const desc = document.getElementById('rep_desc').value.trim();
       const contact = document.getElementById('rep_contact').value.trim() || '（未填寫）';
-      const env = `Polypharmacy-v37 | ${window.innerWidth}x${window.innerHeight} | ${new Date().toLocaleString('zh-TW')}`;
+      const env = `Polypharmacy-v39 | ${window.innerWidth}x${window.innerHeight} | ${new Date().toLocaleString('zh-TW')}`;
       return { type, drug, desc, contact, env, plainText: `【類型】${type}\n【藥品】${drug}\n【描述】${desc}\n【聯絡】${contact}\n【環境】${env}` };
     }
 
